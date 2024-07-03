@@ -1,0 +1,50 @@
+syntax = "proto3";
+import "../base/request-params.proto";
+import "../base/success-responce.proto";
+
+
+service ProductService {
+  rpc getAll (ParamsGetAll) returns (Products) {}
+  rpc getById (ParamsId) returns (Product) {}
+  rpc create (SaveMerchantProduct) returns (Product) {}
+  rpc update (SaveMerchantProduct) returns (Product) {}
+  rpc delete (ParamsId) returns (SuccessResponce) {}
+}
+
+message Products {
+  repeated Product items = 1;
+}
+
+message Product {
+  int32 id = 1;
+  string name = 2;
+  string description = 3;
+  string features= 4;
+  string price = 5;
+  string keywords = 6;
+  string url = 7;
+  string category = 8;
+  string subcategory = 9;
+  optional string created_at = 10;
+  optional string updated_at = 11;
+  optional int32 status = 12;
+  optional int32 count = 13;
+}
+
+message SaveMerchantProduct {
+  optional int32 id = 1;
+  string name = 2;
+  string description = 3;
+  string features = 4;
+  string price = 5;
+  string keywords = 6;
+  string url = 7;
+  string category = 8;
+  string subcategory = 9;
+  optional int32 status = 10;
+}
+
+message ParamsGetAll {
+  optional int32 limit = 1;
+  optional int32 page = 2;
+}

@@ -1,0 +1,29 @@
+{
+  "name": "receivers-service",
+  "version": "1.0.0",
+  "description": "RabbitMQ receivers-service in gRPC",
+  "scripts": {
+    "up": "db-migrate up --env pg",
+    "down": "db-migrate down --env pg",
+    "start": "db-migrate up && ts-node src/app.ts",
+    "watch": "nodemon -e ts  --exec npm start"
+  },
+  "author": "Asqarov Abdulhafiz",
+  "license": "ISC",
+  "dependencies": {
+    "@grpc/grpc-js": "^1.10.10",
+    "@grpc/proto-loader": "^0.7.13",
+    "amqplib": "^0.10.4",
+    "async-redis": "^2.0.0",
+    "db-migrate-pg": "^1.5.2",
+    "dotenv": "^16.4.5",
+    "pg": "^8.12.0",
+    "redis": "^4.6.14",
+    "typescript": "^5.5.3",
+    "uuid": "^10.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.9",
+    "nodemon": "^3.1.4"
+  }
+}

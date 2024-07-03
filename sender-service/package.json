@@ -1,0 +1,29 @@
+{
+  "name": "sender-service",
+  "version": "1.0.0",
+  "description": "RabbitMQ sender-service by gRPC",
+  "author": "Asqarov Abdulhafiz",
+  "license": "ISC",
+  "scripts": {
+    "up": "db-migrate up --env pg",
+    "down": "db-migrate down --env pg",
+    "start": "db-migrate up && ts-node src/app.ts",
+    "watch": "nodemon -e ts  --exec npm start"
+  },
+  "dependencies": {
+    "@grpc/grpc-js": "^1.9.14",
+    "@grpc/proto-loader": "^0.7.13",
+    "amqplib": "^0.10.3",
+    "async-redis": "^2.0.0",
+    "db-migrate-pg": "^1.5.2",
+    "dotenv": "^16.4.5",
+    "pg": "^8.12.0",
+    "redis": "^3.1.0",
+    "typescript": "^5.5.2",
+    "uuid": "^10.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.9",
+    "nodemon": "^3.1.4"
+  }
+}

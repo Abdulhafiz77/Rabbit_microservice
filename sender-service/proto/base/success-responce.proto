@@ -1,0 +1,3 @@
+message SuccessResponce {
+    optional bool success = 1;
+}
